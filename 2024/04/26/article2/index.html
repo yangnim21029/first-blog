@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>
+    XFEL and DNA Repair Enzyme
+  </title>
+  <link href="/first-blog/css/style.css" rel="stylesheet" />
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+<body>
+  <div class="container">
+    <nav>
+      <ul>
+        <li><a href="#researchArticle">Home</a></li>
+        <li><a href="#webinarSection">Webinars</a></li>
+        <li><a href="#collaborativeProjects">Projects</a></li>
+        <li><a href="#recommendationsSection">Recommendations</a></li>
+        <li><a href="#commentsSection">Comments</a></li>
+      </ul>
+    </nav>
+    <button id="backToTop" onclick="scrollToTop()">Back to Top</button>
+    <a href="#mainContent" class="skip-link">Skip to main content</a>
+
+    <div id="researchArticle" class="article">
+      <p><strong>把 🪨obsidian(黑曜石)筆記軟體 當 AI RAG</strong><br>obsidian 只要是有深入使用一定會知道她是多麼的好<br><img src="https://ithelp.ithome.com.tw/upload/images/20240521/20136076wX9uGlDYLK.jpg" alt="https://ithelp.ithome.com.tw/upload/images/20240521/20136076wX9uGlDYLK.jpg"><br><img src="https://ithelp.ithome.com.tw/upload/images/20240521/20136076iVChTnGPU1.jpg" alt="https://ithelp.ithome.com.tw/upload/images/20240521/20136076iVChTnGPU1.jpg"></p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#因她是本地型態路徑需如此指定</span></span><br><span class="line">documents = ObsidianReader(</span><br><span class="line">    f<span class="string">&quot;E:\我的資料夾\我的筆記\心得筆記&quot;</span></span><br><span class="line">).load_data()  <span class="comment"># Returns list of documents</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>🎥Youtube 知識問答</strong><br><img src="https://ithelp.ithome.com.tw/upload/images/20240521/20136076FeD5Cf4bkO.jpg" alt="https://ithelp.ithome.com.tw/upload/images/20240521/20136076FeD5Cf4bkO.jpg"><br><img src="https://ithelp.ithome.com.tw/upload/images/20240521/20136076Oolr8rtyq6.jpg" alt="https://ithelp.ithome.com.tw/upload/images/20240521/20136076Oolr8rtyq6.jpg"><br><strong>把 Notion 當 AI RAG</strong><br>Notion 相當好用且跨任何平台,我一直在使用<br><img src="https://ithelp.ithome.com.tw/upload/images/20240521/20136076Whu2w73oPe.jpg" alt="https://ithelp.ithome.com.tw/upload/images/20240521/20136076Whu2w73oPe.jpg"><br><img src="https://ithelp.ithome.com.tw/upload/images/20240521/201360769GY2ejhipu.jpg" alt="https://ithelp.ithome.com.tw/upload/images/20240521/201360769GY2ejhipu.jpg"><br>✨<strong>AI 總結</strong><br><img src="https://ithelp.ithome.com.tw/upload/images/20240520/20136076obUCHTsN0w.jpg" alt="https://ithelp.ithome.com.tw/upload/images/20240520/20136076obUCHTsN0w.jpg"><br>再增加一個部落格標題生成文章<br><img src="https://ithelp.ithome.com.tw/upload/images/20240520/20136076kG17ppRkHe.jpg" alt="https://ithelp.ithome.com.tw/upload/images/20240520/20136076kG17ppRkHe.jpg"><br><img src="https://ithelp.ithome.com.tw/upload/images/20240520/201360760TivQyHFmW.jpg" alt="https://ithelp.ithome.com.tw/upload/images/20240520/201360760TivQyHFmW.jpg"><br>大家都知道 chatgpt 是目前最佳的 AI,很多元件都需 chatgpt 才會運作,於是本人想到了利用 gpt-3.5-turbo 但卻是使用 ollama 來解析 sql,意外發現解析很快可能是元件支援的關係<br>問的方式很重要,如果問的好會有以下答案:<br><img src="https://ithelp.ithome.com.tw/upload/images/20240520/20136076NmZg8mJyj1.jpg" alt="https://ithelp.ithome.com.tw/upload/images/20240520/20136076NmZg8mJyj1.jpg"><br><img src="https://ithelp.ithome.com.tw/upload/images/20240520/20136076yRfGti5QdT.jpg" alt="https://ithelp.ithome.com.tw/upload/images/20240520/20136076yRfGti5QdT.jpg"><br><img src="https://ithelp.ithome.com.tw/upload/images/20240520/20136076T2JSaYkJfG.jpg" alt="https://ithelp.ithome.com.tw/upload/images/20240520/20136076T2JSaYkJfG.jpg"><br><strong>改成聊天模式加上完美分析(使用 langchain 資料庫分析元件)</strong><br><img src="https://ithelp.ithome.com.tw/upload/images/20240519/20136076XpEzpmpXzG.jpg" alt="https://ithelp.ithome.com.tw/upload/images/20240519/20136076XpEzpmpXzG.jpg"><br>直接表格編輯<br><img src="https://ithelp.ithome.com.tw/upload/images/20240519/20136076bj1vT9HAaE.jpg" alt="https://ithelp.ithome.com.tw/upload/images/20240519/20136076bj1vT9HAaE.jpg"><br>使用模組方式將 gemini AI 套入資料庫(程式分離資料耦合)<br><img src="https://ithelp.ithome.com.tw/upload/images/20240519/20136076npI6Wl3yNe.jpg" alt="https://ithelp.ithome.com.tw/upload/images/20240519/20136076npI6Wl3yNe.jpg"><br><img src="https://ithelp.ithome.com.tw/upload/images/20240519/20136076YLjZbTpu5N.jpg" alt="https://ithelp.ithome.com.tw/upload/images/20240519/20136076YLjZbTpu5N.jpg"><br><img src="https://ithelp.ithome.com.tw/upload/images/20240519/20136076kI4NBM3ksc.jpg" alt="https://ithelp.ithome.com.tw/upload/images/20240519/20136076kI4NBM3ksc.jpg"><br><img src="https://ithelp.ithome.com.tw/upload/images/20240519/20136076eGC13Oy0AN.jpg" alt="https://ithelp.ithome.com.tw/upload/images/20240519/20136076eGC13Oy0AN.jpg"><br><img src="https://ithelp.ithome.com.tw/upload/images/20240519/20136076GM48tZA8qc.jpg" alt="https://ithelp.ithome.com.tw/upload/images/20240519/20136076GM48tZA8qc.jpg"><br><img src="https://ithelp.ithome.com.tw/upload/images/20240519/20136076s3pW8UGfqT.jpg" alt="https://ithelp.ithome.com.tw/upload/images/20240519/20136076s3pW8UGfqT.jpg"><br><img src="https://ithelp.ithome.com.tw/upload/images/20240519/20136076DnWVKw3PdC.jpg" alt="https://ithelp.ithome.com.tw/upload/images/20240519/20136076DnWVKw3PdC.jpg"></p>
+
+    </div>
+
+    <div class="research-item">
+      <h3>Research Title</h3>
+      <p>Brief abstract of the research.</p>
+      <div class="comments-section">
+        <h4>Comments</h4>
+        <textarea placeholder="Leave a comment..."></textarea>
+        <button>Submit</button>
+        <div class="comments-list">
+          <div class="comment">
+            <p>Sample comment from a user.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="webinar-section">
+      <h2>Upcoming Webinars</h2>
+      <div class="webinar-item">
+        <h3>Webinar Title</h3>
+        <p>Details about the webinar.</p>
+        <button onclick="joinWebinar()">Meet Link</button>
+        <button onclick="joinWebinar()">Zoom Link</button>
+      </div>
+    </div>
+    <div class="collaborative-projects">
+      <h2>Collaborative Projects</h2>
+      <div class="project-item">
+        <h3>Project Title</h3>
+        <p>Details about the project and how users can contribute.</p>
+        <button onclick="joinProject()">Join FB</button>
+        <button onclick="joinProject()">Join Slack</button>
+        <button onclick="joinProject()">Join Discord</button>
+        <button onclick="joinProject()">Join GitHub</button>
+        <button onclick="joinProject()">Join Project</button>
+      </div>
+    </div>
+    <div class="recommendations-section">
+      <h2>Recommended for You</h2>
+      <div class="recommendation-item">
+        <h3>Research Title</h3>
+        <p>Brief abstract of the research.</p>
+      </div>
+      <!-- More recommendation items -->
+    </div>
+    <div class="user-poll">
+      <h4>Your Opinion Matters</h4>
+      <form>
+        <label for="pollQuestion">What do you think about this research?</label>
+        <select id="pollQuestion">
+          <option value="excellent">Excellent</option>
+          <option value="good">Good</option>
+          <option value="average">Average</option>
+          <option value="poor">Poor</option>
+        </select>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+    <div id="liveChat">
+      <h4>Live Chat Room for All</h4>
+      <button onclick="openChat()">Chat Now</button>
+    </div>
+  </div>
+  <script>
+    function joinWebinar() {
+      // Code to join the webinar
+    }
+
+    function joinProject() {
+      // Code to join the project
+    }
+    function openChat() {
+      // Code to open live chat window
+    }
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+</body>
+
+</html>

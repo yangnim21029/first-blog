@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>
+    XFEL and DNA Repair Enzyme
+  </title>
+  <link href="/first-blog/css/style.css" rel="stylesheet" />
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+<body>
+  <div class="container">
+    <nav>
+      <ul>
+        <li><a href="#researchArticle">Home</a></li>
+        <li><a href="#webinarSection">Webinars</a></li>
+        <li><a href="#collaborativeProjects">Projects</a></li>
+        <li><a href="#recommendationsSection">Recommendations</a></li>
+        <li><a href="#commentsSection">Comments</a></li>
+      </ul>
+    </nav>
+    <button id="backToTop" onclick="scrollToTop()">Back to Top</button>
+    <a href="#mainContent" class="skip-link">Skip to main content</a>
+
+    <div id="researchArticle" class="article">
+      <h1 id="YOLO-Object-Detection-Explained"><a href="#YOLO-Object-Detection-Explained" class="headerlink" title="YOLO Object Detection Explained"></a>YOLO Object Detection Explained</h1><p>Understand YOLO object detection, its benefits, how it has evolved over the last couple of years and some real-life applications.</p>
+<p>Sep 2022 · 21 min read</p>
+<p>CONTENTS</p>
+<ul>
+<li><p><a target="_blank" rel="noopener" href="https://www.datacamp.com/blog/yolo-object-detection-explained#what-is-yolo?-youon">What is YOLO?</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.datacamp.com/blog/yolo-object-detection-explained#what-makes-yolo-popular-for-object-detection?-someo">What Makes YOLO Popular for Object Detection?</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.datacamp.com/blog/yolo-object-detection-explained#yolo-architecture-yoloa">YOLO Architecture</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.datacamp.com/blog/yolo-object-detection-explained#how-does-yolo-object-detection-work?-nowth">How Does YOLO Object Detection Work?</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.datacamp.com/blog/yolo-object-detection-explained#yolo-applications-yoloo">YOLO Applications</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.datacamp.com/blog/yolo-object-detection-explained#yolo,-yolov2,-yolo9000,-yolov3,-yolov4,-yolor,-yolox,-yolov5,-yolov6,-yolov7-and-differences-since">YOLO, YOLOv2, YOLO9000, YOLOv3, YOLOv4, YOLOR, YOLOX, YOLOv5, YOLOv6, YOLOv7 and Differences</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.datacamp.com/blog/yolo-object-detection-explained#yolor%E2%80%8A%E2%80%94%E2%80%8Ayou-only-look-one-representation-asa%3Ca">YOLOR — You Only Look One Representation</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.datacamp.com/blog/yolo-object-detection-explained#yolox%E2%80%8A%E2%80%94%E2%80%8Aexceeding-yolo-series-in-2021-thisu">YOLOX — Exceeding YOLO Series in 2021</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.datacamp.com/blog/yolo-object-detection-explained#yolov5-yolov">YOLOv5</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.datacamp.com/blog/yolo-object-detection-explained#yolov6%E2%80%8A%E2%80%94%E2%80%8Aa-single-stage-object-detection-framework-for-industrial-applications-dedic">YOLOv6 — A Single-Stage Object Detection Framework for Industrial Applications</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.datacamp.com/blog/yolo-object-detection-explained#yolov7%E2%80%8A%E2%80%94%E2%80%8Atrainable-bag-of-freebies-sets-new-state-of-the-art-for-real-time-object-detectors-yolov">YOLOv7 — Trainable bag-of-freebies sets new state-of-the-art for real-time object detectors</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.datacamp.com/blog/yolo-object-detection-explained#conclusion-thisa">Conclusion</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.datacamp.com/blog/yolo-object-detection-explained#faq">YOLO FAQs</a></p>
+</li>
+</ul>
+<p>SHARE</p>
+<p>Object detection is a technique used in computer vision for the identification and localization of objects within an image or a video.</p>
+<p>Image Localization is the process of identifying the correct location of one or multiple objects using bounding boxes, which correspond to rectangular shapes around the objects.</p>
+<p>This process is sometimes confused with image classification or image recognition, which aims to predict the class of an image or an object within an image into one of the categories or classes.</p>
+<p>The illustration below corresponds to the visual representation of the previous explanation. The object detected within the image is “Person.”</p>
+<p><img src="https://images.datacamp.com/image/upload/v1664382700/Object_detection_illustrated_from_image_recognition_and_localization_704ca34bd8.png" alt="Object detection illustrated from image recognition and localization"></p>
+<p>Image by Author</p>
+<p>In this conceptual blog, you will first understand the benefits of object detection, before introducing YOLO, the state-of-the-art object detection algorithm.</p>
+<p>In the second part, we will focus more on the YOLO algorithm and how it works. After that, we will provide some real-life applications using YOLO.</p>
+<p>The last section will explain how YOLO evolved from 2015 to 2020 before concluding on the next steps.</p>
+<h2 id="What-is-YOLO"><a href="#What-is-YOLO" class="headerlink" title="What is YOLO?"></a>What is YOLO?</h2><p>You Only Look Once (YOLO) is a state-of-the-art, real-time object detection algorithm introduced in 2015 by<a target="_blank" rel="noopener" href="https://arxiv.org/search/cs?searchtype=author&query=Redmon,+J"> Joseph Redmon</a>,<a target="_blank" rel="noopener" href="https://arxiv.org/search/cs?searchtype=author&query=Divvala,+S"> Santosh Divvala</a>,<a target="_blank" rel="noopener" href="https://arxiv.org/search/cs?searchtype=author&query=Girshick,+R"> Ross Girshick</a>, and<a target="_blank" rel="noopener" href="https://arxiv.org/search/cs?searchtype=author&query=Farhadi,+A"> Ali Farhadi</a> in their famous research paper “<a target="_blank" rel="noopener" href="https://arxiv.org/abs/1506.02640">You Only Look Once: Unified, Real-Time Object Detection</a>”.</p>
+<p>The authors frame the object detection problem as a regression problem instead of a classification task by spatially separating bounding boxes and associating probabilities to each of the detected images using a single convolutional neural network (CNN).</p>
+<p>By taking the <a target="_blank" rel="noopener" href="https://datacamp.com/courses/image-processing-with-keras-in-python">Image Processing with Keras in Python</a> course, you will be able to build Keras based deep neural networks for image classification tasks.</p>
+<p>If you are more interested in Pytorch, <a target="_blank" rel="noopener" href="https://datacamp.com/courses/deep-learning-with-pytorch">Deep Learning with Pytorch</a> will teach you about convolutional neural networks and how to use them to build much more powerful models.</p>
+<h2 id="What-Makes-YOLO-Popular-for-Object-Detection"><a href="#What-Makes-YOLO-Popular-for-Object-Detection" class="headerlink" title="What Makes YOLO Popular for Object Detection?"></a>What Makes YOLO Popular for Object Detection?</h2><p>Some of the reasons why YOLO is leading the competition include its:</p>
+<ul>
+<li>Speed</li>
+<li>Detection accuracy</li>
+<li>Good generalization</li>
+<li>Open-source</li>
+</ul>
+<h3 id="1-Speed"><a href="#1-Speed" class="headerlink" title="1- Speed"></a>1- Speed</h3><p>YOLO is extremely fast because it does not deal with complex pipelines. It can process images at 45 Frames Per Second (FPS). In addition, YOLO reaches more than twice the mean Average Precision (mAP) compared to other real-time systems, which makes it a great candidate for real-time processing.</p>
+<p>From the graphic below, we observe that YOLO is far beyond the other object detectors with 91 FPS.</p>
+<p><img src="https://images.datacamp.com/image/upload/v1664382693/YOLO_Speed_compared_to_other_state_of_the_art_object_detectors_9c11b62189.png" alt="YOLO Speed compared to other state-of-the-art object detectors"></p>
+<p>YOLO Speed compared to other state-of-the-art object detectors (<a target="_blank" rel="noopener" href="https://www.researchgate.net/figure/Comparison-of-frames-processed-per-second-FPS-implementing-the-Faster-R-CNN-R-FCN-SSD_fig6_342570032">source</a>)</p>
+<h3 id="2-High-detection-accuracy"><a href="#2-High-detection-accuracy" class="headerlink" title="2- High detection accuracy"></a>2- High detection accuracy</h3><p>YOLO is far beyond other state-of-the-art models in accuracy with very few background errors.</p>
+<h3 id="3-Better-generalization"><a href="#3-Better-generalization" class="headerlink" title="3- Better generalization"></a>3- Better generalization</h3><p>This is especially true for the new versions of YOLO, which will be discussed later in the article. With those advancements, YOLO pushed a little further by providing a better generalization for new domains, which makes it great for applications relying on fast and robust object detection.</p>
+<p>For instance the <a target="_blank" rel="noopener" href="https://www.researchgate.net/publication/337498273_Automatic_Detection_of_Melanoma_with_Yolo_Deep_Convolutional_Neural_Networks">Automatic Detection of Melanoma with Yolo Deep Convolutional Neural Networks paper</a> shows that the first version YOLOv1 has the lowest mean average precision for the automatic detection of melanoma disease, compared to YOLOv2 and YOLOv3.</p>
+<h3 id="4-Open-source"><a href="#4-Open-source" class="headerlink" title="4- Open source"></a>4- Open source</h3><p>Making YOLO open-source led the community to constantly improve the model. This is one of the reasons why YOLO has made so many improvements in such a limited time.</p>
+<h2 id="YOLO-Architecture"><a href="#YOLO-Architecture" class="headerlink" title="YOLO Architecture"></a>YOLO Architecture</h2><p>YOLO architecture is similar to<a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1409.4842.pdf"> GoogleNet</a>. As illustrated below, it has overall 24 convolutional layers, four max-pooling layers, and two fully connected layers.</p>
+<p><img src="https://images.datacamp.com/image/upload/v1664382694/YOLO_Architecture_from_the_original_paper_ff4e5383c0.png" alt="YOLO Architecture from the original paper"></p>
+<p>YOLO Architecture from the<a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1506.02640.pdf"> original paper</a> (Modified by Author)</p>
+<p>The architecture works as follows:</p>
+<ul>
+<li>Resizes the input image into 448x448 before going through the convolutional network.</li>
+<li>A 1x1 convolution is first applied to reduce the number of channels, which is then followed by a 3x3 convolution to generate a cuboidal output.</li>
+<li>The activation function under the hood is ReLU, except for the final layer, which uses a linear activation function.</li>
+<li>Some additional techniques, such as batch normalization and dropout, respectively regularize the model and prevent it from overfitting.</li>
+</ul>
+<p>By completing the <a target="_blank" rel="noopener" href="https://www.datacamp.com/tracks/deep-learning-in-python">Deep Learning in Python</a> course, you will be ready to use Keras to train and test complex, multi-output networks and dive deeper into deep learning.</p>
+<h2 id="How-Does-YOLO-Object-Detection-Work"><a href="#How-Does-YOLO-Object-Detection-Work" class="headerlink" title="How Does YOLO Object Detection Work?"></a>How Does YOLO Object Detection Work?</h2><p>Now that you understand the architecture, let’s have a high-level overview of how the YOLO algorithm performs object detection using a simple use case.</p>
+<p>_“Imagine you built a YOLO application that detects players and soccer balls from a given image. _</p>
+<p><em>But how can you explain this process to someone, especially non-initiated people?</em></p>
+<p>_ → That is the whole point of this section. You will understand the whole process of how YOLO performs object detection; how to get image (B) from image (A)”_</p>
+<p><img src="https://images.datacamp.com/image/upload/v1664382699/YOLO_Object_Detection_Image_by_Jeffrey_F_Lin_on_Unsplash_f19d755757.png" alt="YOLO Object Detection Image by Jeffrey F Lin on Unsplash"><em>Image by Author</em></p>
+<p>The algorithm works based on the following four approaches:</p>
+<ul>
+<li>Residual blocks</li>
+<li>Bounding box regression</li>
+<li>Intersection Over Unions or IOU for short</li>
+<li>Non-Maximum Suppression.</li>
+</ul>
+<p>Let’s have a closer look at each one of them.</p>
+<h3 id="1-Residual-blocks"><a href="#1-Residual-blocks" class="headerlink" title="1- Residual blocks"></a>1- Residual blocks</h3><p>This first step starts by dividing the original image (A) into NxN grid cells of equal shape, where N in our case is 4 shown on the image on the right. Each cell in the grid is responsible for localizing and predicting the class of the object that it covers, along with the probability&#x2F;confidence value.</p>
+<p><img src="https://images.datacamp.com/image/upload/v1664382699/Application_of_grid_cells_to_the_original_image_7d3c056d06.png" alt="Application of grid cells to the original image"></p>
+<p><em>Image by Author</em></p>
+<h3 id="2-Bounding-box-regression"><a href="#2-Bounding-box-regression" class="headerlink" title="2- Bounding box regression"></a>2- Bounding box regression</h3><p>The next step is to determine the bounding boxes which correspond to rectangles highlighting all the objects in the image. We can have as many bounding boxes as there are objects within a given image.</p>
+<p>YOLO determines the attributes of these bounding boxes using a single regression module in the following format, where Y is the final vector representation for each bounding box.</p>
+<p>Y &#x3D; [pc, bx, by, bh, bw, c1, c2]</p>
+<p>This is especially important during the training phase of the model.</p>
+<ul>
+<li>pc corresponds to the probability score of the grid containing an object. For instance, all the grids in red will have a probability score higher than zero. The image on the right is the simplified version since the probability of each yellow cell is zero (insignificant).</li>
+</ul>
+<p><img src="https://images.datacamp.com/image/upload/v1664382700/Identification_of_significant_and_insignificant_grids_d1e80c8bf4.png" alt="Identification of significant and insignificant grids"></p>
+<p><em>Image by Author</em></p>
+<ul>
+<li>bx, by are the x and y coordinates of the center of the bounding box with respect to the enveloping grid cell.</li>
+<li>bh, bw correspond to the height and the width of the bounding box with respect to the enveloping grid cell.</li>
+<li>c1 and c2 correspond to the two classes Player and Ball. We can have as many classes as your use case requires.</li>
+</ul>
+<p>To understand, let’s pay closer attention to the player on the bottom right.</p>
+<p><img src="https://images.datacamp.com/image/upload/v1664382698/Bounding_box_regression_identification_f530973d75.png" alt="Bounding box regression identification">Image by Author</p>
+<h3 id="3-Intersection-Over-Unions-or-IOU"><a href="#3-Intersection-Over-Unions-or-IOU" class="headerlink" title="3- Intersection Over Unions or IOU"></a>3- Intersection Over Unions or IOU</h3><p>Most of the time, a single object in an image can have multiple grid box candidates for prediction, even though not all of them are relevant. The goal of the IOU (a value between 0 and 1) is to discard such grid boxes to only keep those that are relevant. Here is the logic behind it:</p>
+<ul>
+<li>The user defines its IOU selection threshold, which can be, for instance, 0.5.</li>
+<li>Then YOLO computes the IOU of each grid cell which is the Intersection area divided by the Union Area.</li>
+<li>Finally, it ignores the prediction of the grid cells having an IOU ≤ threshold and considers those with an IOU &gt; threshold.</li>
+</ul>
+<p>Below is an illustration of applying the grid selection process to the bottom left object. We can observe that the object originally had two grid candidates, then only “Grid 2” was selected at the end.</p>
+<p><img src="https://images.datacamp.com/image/upload/v1664382698/Process_of_selecting_the_best_grids_for_prediction_393ee31f11.png" alt="Process of selecting the best grids for prediction"></p>
+<p>Image by Author</p>
+<h3 id="4-Non-Max-Suppression-or-NMS"><a href="#4-Non-Max-Suppression-or-NMS" class="headerlink" title="4- Non-Max Suppression or NMS"></a>4- Non-Max Suppression or NMS</h3><p>Setting a threshold for the IOU is not always enough because an object can have multiple boxes with IOU beyond the threshold, and leaving all those boxes might include noise. Here is where we can use NMS to keep only the boxes with the highest probability score of detection.</p>
+<h2 id="YOLO-Applications"><a href="#YOLO-Applications" class="headerlink" title="YOLO Applications"></a>YOLO Applications</h2><p>YOLO object detection has different applications in our day-to-day life. In this section, we will cover some of them in the following domains: healthcare, agriculture, security surveillance, and self-driving cars.</p>
+<h3 id="1-Application-in-industries"><a href="#1-Application-in-industries" class="headerlink" title="1- Application in industries"></a>1- Application in industries</h3><p>Object detection has been introduced in many practical industries such as healthcare and agriculture. Let’s understand each one with specific examples.</p>
+<h4 id="Healthcare"><a href="#Healthcare" class="headerlink" title="Healthcare"></a>Healthcare</h4><p>Specifically in surgery, it can be challenging to localize organs in real-time, due to biological diversity from one patient to another.<a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1910.01268.pdf"> Kidney Recognition in CT used YOLOv3</a> to facilitate localizing kidneys in 2D and 3D from computerized tomography (CT) scans.</p>
+<p>The <a target="_blank" rel="noopener" href="https://www.datacamp.com/courses/biomedical-image-analysis-in-python">Biomedical Image Analysis in Python course</a> can help you learn the fundamentals of exploring, manipulating, and measuring biomedical image data using Python.</p>
+<p><img src="https://images.datacamp.com/image/upload/v1664382693/2_D_Kidney_detection_by_YOL_Ov3_def9c7217f.png" alt="2D Kidney detection by YOLOv3"></p>
+<p>2D Kidney detection by YOLOv3 (Image from<a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1910.01268.pdf"> Kidney Recognition in CT using YOLOv3</a>)</p>
+<h4 id="Agriculture"><a href="#Agriculture" class="headerlink" title="Agriculture"></a>Agriculture</h4><p><a target="_blank" rel="noopener" href="https://www.datacamp.com/learn/ai">Artificial Intelligence</a> and robotics are playing a major role in modern agriculture. Harvesting robots are vision-based robots that were introduced to replace the manual picking of fruits and vegetables. One of the best models in this field uses YOLO. In<a target="_blank" rel="noopener" href="https://www.nature.com/articles/s41598-021-81216-5"> Tomato detection based on modified YOLOv3 framework</a>, the authors describe how they used YOLO to identify the types of fruits and vegetables for efficient harvest.</p>
+<p><img src="https://images.datacamp.com/image/upload/v1664382701/Comparison_of_YOLO_tomato_models_a3f5ccce57.png" alt="Comparison of YOLO-tomato models"></p>
+<p>Image from Tomato detection based on modified YOLOv3 framework (<a target="_blank" rel="noopener" href="https://www.nature.com/articles/s41598-021-81216-5">source</a>)</p>
+<h3 id="2-Security-surveillance"><a href="#2-Security-surveillance" class="headerlink" title="2- Security surveillance"></a>2- Security surveillance</h3><p>Even though object detection is mostly used in security surveillance, this is not the only application. YOLOv3 has been used during covid19 pandemic to estimate social distance violations between people.</p>
+<p>You can further your reading on this topic from<a target="_blank" rel="noopener" href="https://pubmed.ncbi.nlm.nih.gov/33163330"> A deep-learning-based social distance monitoring framework for COVID-19</a>.</p>
+<h3 id="3-Self-driving-cars"><a href="#3-Self-driving-cars" class="headerlink" title="3- Self-driving cars"></a>3- Self-driving cars</h3><p>Real-time object detection is part of the DNA of autonomous vehicle systems. This integration is vital for autonomous vehicles because they need to properly identify the correct lanes and all the surrounding objects and pedestrians to increase road safety. The real-time aspect of YOLO makes it a better candidate compared to simple image segmentation approaches.</p>
+<h2 id="YOLO-YOLOv2-YOLO9000-YOLOv3-YOLOv4-YOLOR-YOLOX-YOLOv5-YOLOv6-YOLOv7-and-Differences"><a href="#YOLO-YOLOv2-YOLO9000-YOLOv3-YOLOv4-YOLOR-YOLOX-YOLOv5-YOLOv6-YOLOv7-and-Differences" class="headerlink" title="YOLO, YOLOv2, YOLO9000, YOLOv3, YOLOv4, YOLOR, YOLOX, YOLOv5, YOLOv6, YOLOv7 and Differences"></a>YOLO, YOLOv2, YOLO9000, YOLOv3, YOLOv4, YOLOR, YOLOX, YOLOv5, YOLOv6, YOLOv7 and Differences</h2><p>Since the first release of YOLO in 2015, it has evolved a lot with different versions. In this section, we will understand the differences between each of these versions.</p>
+<p><img src="https://images.datacamp.com/image/upload/v1665138729/YOLO_Timeframe_2015_to_2022_26401b9aae.png" alt="YOLO Timeframe 2015 to 2022"></p>
+<h3 id="YOLO-or-YOLOv1-the-starting-point"><a href="#YOLO-or-YOLOv1-the-starting-point" class="headerlink" title="YOLO or YOLOv1, the starting point"></a>YOLO or YOLOv1, the starting point</h3><p>This first version of YOLO was a game changer for object detection, because of its ability to quickly and efficiently recognize objects.</p>
+<p>However, like many other solutions, the first version of YOLO has its own limitations:</p>
+<ul>
+<li>It struggles to detect smaller images within a group of images, such as a group of persons in a stadium. This is because each grid in YOLO architecture is designed for single object detection.</li>
+<li>Then, YOLO is unable to successfully detect new or unusual shapes.</li>
+<li>Finally, the loss function used to approximate the detection performance treats errors the same for both small and large bounding boxes, which in fact creates incorrect localizations.</li>
+</ul>
+<h3 id="YOLOv2-or-YOLO9000"><a href="#YOLOv2-or-YOLO9000" class="headerlink" title="YOLOv2 or YOLO9000"></a>YOLOv2 or YOLO9000</h3><p>YOLOv2 was created in 2016 with the idea of making the YOLO model<a target="_blank" rel="noopener" href="https://arxiv.org/abs/1612.08242"> better, faster and stronger</a>.</p>
+<p>The improvement includes but is not limited to the use of<a target="_blank" rel="noopener" href="https://paperswithcode.com/method/darknet-19"> Darknet-19</a> as new architecture, batch normalization, higher resolution of inputs, convolution layers with anchors, dimensionality clustering, and (5) Fine-grained features.</p>
+<h4 id="1-Batch-normalization"><a href="#1-Batch-normalization" class="headerlink" title="1- Batch normalization"></a>1- Batch normalization</h4><p>Adding a batch normalization layer improved the performance by 2% mAP. This batch normalization included a regularization effect, preventing overfitting.</p>
+<h4 id="2-Higher-input-resolution"><a href="#2-Higher-input-resolution" class="headerlink" title="2- Higher input resolution"></a>2- Higher input resolution</h4><p>YOLOv2 directly uses a higher resolution 448×448 input instead of 224×224, which makes the model adjust its filter to perform better on higher resolution images. This approach increased the accuracy by 4% mAP, after being trained for 10 epochs on the<a target="_blank" rel="noopener" href="https://paperswithcode.com/dataset/imagenet"> ImageNet data</a>.</p>
+<h4 id="3-Convolution-layers-using-anchor-boxes"><a href="#3-Convolution-layers-using-anchor-boxes" class="headerlink" title="3- Convolution layers using anchor boxes"></a>3- Convolution layers using anchor boxes</h4><p>Instead of predicting the exact coordinate of bounding boxes of the objects as YOLOv1 operates, YOLOv2 simplifies the problem by replacing the fully connected layers with anchors boxes. This approach slightly decreased the accuracy, but improved the model recall by 7%, which gives more room for improvement.</p>
+<h4 id="4-Dimensionality-clustering"><a href="#4-Dimensionality-clustering" class="headerlink" title="4- Dimensionality clustering"></a>4- Dimensionality clustering</h4><p>The previously mentioned anchor boxes are automatically found by YOLOv2 using k-means dimensionality clustering with k&#x3D;5 instead of performing a manual selection. This novel approach provided a good tradeoff between the recall and the precision of the model.</p>
+<p>For a better understanding of the k-means dimensionality clustering, take a look at our<a target="_blank" rel="noopener" href="https://www.datacamp.com/tutorial/k-means-clustering-python"> K-Means Clustering in Python with scikit-learn</a> and<a target="_blank" rel="noopener" href="https://www.datacamp.com/tutorial/k-means-clustering-r"> K-Means Clustering in R</a> tutorials. They dive into the concept of k-means clustering using Python and R.</p>
+<h4 id="5-Fine-grained-features"><a href="#5-Fine-grained-features" class="headerlink" title="5- Fine-grained features"></a>5- Fine-grained features</h4><p>YOLOv2 predictions generate 13x13 feature maps, which is of course enough for large object detection. But for much finer objects detection, the architecture can be modified by turning the 26 × 26 × 512 feature map into a 13 × 13 × 2048 feature map, concatenated with the original features. This approach improved the model performance by 1%.</p>
+<h3 id="YOLOv3-—-An-incremental-improvement"><a href="#YOLOv3-—-An-incremental-improvement" class="headerlink" title="YOLOv3 — An incremental improvement"></a>YOLOv3 — An incremental improvement</h3><p><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1804.02767.pdf">An incremental improvement</a> has been performed on the YOLOv2 to create YOLOv3.</p>
+<p>The change mainly includes a new network architecture:<a target="_blank" rel="noopener" href="https://paperswithcode.com/method/darknet-53"> Darknet-53</a>. This is a 106 neural network, with upsampling networks and residual blocks. It is much bigger, faster, and more accurate compared to<a target="_blank" rel="noopener" href="https://arxiv.org/abs/1612.08242"> Darknet-19</a>, which is the backbone of YOLOv2. This new architecture has been beneficial on many levels:</p>
+<h4 id="1-Better-bounding-box-prediction"><a href="#1-Better-bounding-box-prediction" class="headerlink" title="1- Better bounding box prediction"></a>1- Better bounding box prediction</h4><p>A logistic regression model is used by YOLOv3 to predict the objectness score for each bounding box.</p>
+<h4 id="2-More-accurate-class-predictions"><a href="#2-More-accurate-class-predictions" class="headerlink" title="2- More accurate class predictions"></a>2- More accurate class predictions</h4><p>Instead of using softmax as performed in YOLOv2, independent logistic classifiers have been introduced to accurately predict the class of the bounding boxes. This is even useful when facing more complex domains with overlapping labels (e.g. Person → Soccer Player). Using a softmax would constrain each box to have only one class, which is not always true.</p>
+<h4 id="3-More-accurate-prediction-at-different-scales"><a href="#3-More-accurate-prediction-at-different-scales" class="headerlink" title="3- More accurate prediction at different scales"></a>3- More accurate prediction at different scales</h4><p>YOLOv3 performs three predictions at different scales for each location within the input image to help with the upsampling from the previous layers. This strategy allows getting fine-grained and more meaningful semantic information for a better quality output image.</p>
+<h3 id="YOLOv4-—-Optimal-Speed-and-Accuracy-of-Object-Detection"><a href="#YOLOv4-—-Optimal-Speed-and-Accuracy-of-Object-Detection" class="headerlink" title="YOLOv4 — Optimal Speed and Accuracy of Object Detection"></a>YOLOv4 — Optimal Speed and Accuracy of Object Detection</h3><p>This version of YOLO has an<a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2004.10934v1.pdf"> Optimal Speed and Accuracy of Object Detection</a> compared to all the previous versions and other state-of-the-art object detectors.</p>
+<p>The image below shows the YOLOv4 outperforming YOLOv3 and FPS in speed by 10% and 12% respectively.</p>
+<p><img src="https://images.datacamp.com/image/upload/v1664382694/YOL_Ov4_Speed_compared_to_YOL_Ov3_84ed2f07e3.png" alt="YOLOv4 Speed compared to YOLOv3"></p>
+<p><em>YOLOv4 Speed compared to YOLOv3 and other state-of-the-art object detectors</em> (<a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2004.10934v1.pdf">source</a>)</p>
+<p>YOLOv4 is specifically designed for production systems and optimized for parallel computations.</p>
+<p>The backbone of YOLOv4’s architecture is<a target="_blank" rel="noopener" href="https://paperswithcode.com/method/cspdarknet53"> CSPDarknet53</a>, a network containing 29 convolution layers with 3 × 3 filters and approximately 27.6 million parameters.</p>
+<p>This architecture, compared to YOLOv3, adds the following information for better object detection:</p>
+<ul>
+<li>Spatial Pyramid Pooling (SPP) block significantly increases the receptive field, segregates the most relevant context features, and does not affect the network speed.</li>
+<li>Instead of the Feature Pyramid Network (FPN) used in YOLOv3, YOLOv4 uses<a target="_blank" rel="noopener" href="https://bio-protocol.org/exchange/minidetail?type=30&id=9907669"> PANet</a> for parameter aggregation from different detection levels.</li>
+<li>Data augmentation uses the mosaic technique that combines four training images in addition to a self-adversarial training approach.</li>
+<li>Perform optimal hyper-parameter selection using genetic algorithms.</li>
+</ul>
+<h2 id="YOLOR-—-You-Only-Look-One-Representation"><a href="#YOLOR-—-You-Only-Look-One-Representation" class="headerlink" title="YOLOR — You Only Look One Representation"></a>YOLOR — You Only Look One Representation</h2><p>As a<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2105.04206"> Unified Network for Multiple Tasks</a>, YOLOR is based on the unified network which is a combination of explicit and implicit knowledge approaches.</p>
+<p><img src="https://images.datacamp.com/image/upload/v1665138394/YOLOR_unified_network_architecture_7dbcd0cdcf.png" alt="YOLOR unified network architecture"></p>
+<p>_Unified network architecture _(<a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2105.04206.pdf">source</a>)</p>
+<p>Explicit knowledge is normal or conscious learning. Implicit learning on the other hand is one performed subconsciously (from experience).</p>
+<p>Combining these two technics, YOLOR is able to create a more robust architecture based on three processes: (1) feature alignment, (2) prediction alignment for object detection, and (3) canonical representation for multi-task learning</p>
+<h3 id="1-Prediction-alignment"><a href="#1-Prediction-alignment" class="headerlink" title="1- Prediction alignment"></a>1- Prediction alignment</h3><p>This approach introduces an implicit representation into the feature map of every feature pyramid network (FPN), which improves the precision by about 0.5%.</p>
+<h3 id="2-Prediction-refinement-for-object-detection"><a href="#2-Prediction-refinement-for-object-detection" class="headerlink" title="2- Prediction refinement for object detection"></a>2- Prediction refinement for object detection</h3><p>The model predictions are refined by adding implicit representation to the output layers of the network.</p>
+<h3 id="3-Canonical-representation-for-multi-task-learning"><a href="#3-Canonical-representation-for-multi-task-learning" class="headerlink" title="3- Canonical representation for multi-task learning"></a>3- Canonical representation for multi-task learning</h3><p>Performing multi-task training requires the execution of the joint optimization on the loss function shared across all the tasks. This process can decrease the overall performance of the model, and this issue can be mitigated with the integration of the canonical representation during the model training.</p>
+<p>From the following graphic, we can observe that YOLOR achieved on the<a target="_blank" rel="noopener" href="https://viso.ai/deep-learning/yolor/#:~:text=vision.%20On%20the-,MS%20COCO,-dataset%2C%20the%20mean"> MS COCO</a> data state-of-the-art inference speed compared to other models.</p>
+<p><img src="https://images.datacamp.com/image/upload/v1665138396/YOLOR_vs_YOL_Ov4_9ab70df961.png" alt="YOLOR vs YOLOv4"></p>
+<p><em>YOLOR performance vs. YOLOv4 and other models</em> (<a target="_blank" rel="noopener" href="https://github.com/WongKinYiu/yolor">source</a>)</p>
+<h2 id="YOLOX-—-Exceeding-YOLO-Series-in-2021"><a href="#YOLOX-—-Exceeding-YOLO-Series-in-2021" class="headerlink" title="YOLOX — Exceeding YOLO Series in 2021"></a>YOLOX — Exceeding YOLO Series in 2021</h2><p>This uses a baseline that is a modified version of YOLOv3, with Darknet-53 as its backbone.</p>
+<p>Published in the paper<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2107.08430"> Exceeding YOLO Series in 2021</a>, YOLOX brings to the table the following four key characteristics to create a better model compared to the older versions.</p>
+<h3 id="1-An-efficient-decoupled-head"><a href="#1-An-efficient-decoupled-head" class="headerlink" title="1- An efficient decoupled head"></a>1- An efficient decoupled head</h3><p>The coupled head used in the previous YOLO versions is shown to reduce the models’ performance. YOLOX uses a decoupled instead, which allows separating classification and localization tasks, thus increasing the performance of the model.</p>
+<h3 id="2-Robust-data-augmentation"><a href="#2-Robust-data-augmentation" class="headerlink" title="2- Robust data augmentation"></a>2- Robust data augmentation</h3><p>Integration of Mosaic and<a target="_blank" rel="noopener" href="https://paperswithcode.com/method/mixup"> MixUp</a> into the data augmentation approach considerably increased YOLOX’s performance.</p>
+<h3 id="3-An-anchor-free-system"><a href="#3-An-anchor-free-system" class="headerlink" title="3- An anchor-free system"></a>3- An anchor-free system</h3><p>Anchor-based algorithms perform clustering under the hood, which increases the inference time. Removing the anchor mechanism in YOLOX reduced the number of predictions per image, and significantly improved inference time.</p>
+<h3 id="4-SimOTA-for-label-assignment"><a href="#4-SimOTA-for-label-assignment" class="headerlink" title="4- SimOTA for label assignment"></a>4- SimOTA for label assignment</h3><p>Instead of using the intersection of union (IoU) approach, the author introduced SimOTA, a more robust label assignment strategy that achieves state-of-the-art results by not only reducing the training time but also avoiding extra hyperparameter issues. In addition to that, it improved the detection mAP by 3%.</p>
+<h2 id="YOLOv5"><a href="#YOLOv5" class="headerlink" title="YOLOv5"></a>YOLOv5</h2><p>YOLOv5, compared to other versions, does not have a published research paper, and it is the first version of YOLO to be implemented in Pytorch, rather than Darknet.</p>
+<p>Released by Glenn Jocher in June 2020, YOLOv5, similarly to YOLOv4, uses<a target="_blank" rel="noopener" href="https://paperswithcode.com/method/cspdarknet53"> CSPDarknet53</a> as the backbone of its architecture. The release includes five different model sizes: YOLOv5s (smallest), YOLOv5m, YOLOv5l, and YOLOv5x (largest).</p>
+<p>One of the major improvements in YOLOv5 architecture is the integration of the<a target="_blank" rel="noopener" href="https://github.com/ultralytics/yolov5/discussions/3181m1"> Focus layer</a>, represented by a single layer, which is created by replacing the first three layers of YOLOv3. This integration reduced the number of layers, and number of parameters and also increased both forward and backward speed without any major impact on the mAP.</p>
+<p>The following illustration compares the training time between YOLOv4 and YOLOv5s.</p>
+<p><img src="https://images.datacamp.com/image/upload/v1665138394/YOL_Ov4_vs_YOL_Ov5_Training_Time_fb777472fe.png" alt="YOLOv4 vs YOLOv5 Training Time"></p>
+<p><em>Training time comparison between YOLOv4 and YOLOv5</em> (<a target="_blank" rel="noopener" href="https://blog.roboflow.com/yolov4-versus-yolov5">source</a>)</p>
+<h2 id="YOLOv6-—-A-Single-Stage-Object-Detection-Framework-for-Industrial-Applications"><a href="#YOLOv6-—-A-Single-Stage-Object-Detection-Framework-for-Industrial-Applications" class="headerlink" title="YOLOv6 — A Single-Stage Object Detection Framework for Industrial Applications"></a>YOLOv6 — A Single-Stage Object Detection Framework for Industrial Applications</h2><p>Dedicated to<a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2209.02976.pdf"> industrial applications</a> with hardware-friendly efficient design and high performance, the YOLOv6 (MT-YOLOv6) framework was released by<a target="_blank" rel="noopener" href="https://tech.meituan.com/"> Meituan</a>, a Chinese e-commerce company.</p>
+<p>Written in Pytorch, this new version was not part of the official YOLO but still got the name YOLOv6 because its backbone was inspired by the original one-stage YOLO architecture.</p>
+<p>YOLOv6 introduced three significant improvements to the previous YOLOv5: a hardware-friendly backbone and neck design, an efficient decoupled head, and a more effective training strategy.</p>
+<p>YOLOv6 provides outstanding results compared to the previous YOLO versions in terms of accuracy and speed on the COCO dataset as illustrated below.</p>
+<p><img src="https://images.datacamp.com/image/upload/v1665138394/YOLO_Model_Comparison_173f438db6.png" alt="YOLO Model Comparison"></p>
+<p>Comparison of state-of-the-art efficient object detectors. All models are tested with TensorRT 7 except that the quantized model is with TensorRT 8 (<a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2209.02976.pdf">source</a>)</p>
+<ul>
+<li>YOLOv6-N achieved 35.9% AP on the<a target="_blank" rel="noopener" href="https://paperswithcode.com/dataset/coco"> COCO dataset</a> at a throughput of 1234 (throughputs) FPS on an NVIDIA Tesla T4 GPU.</li>
+<li>YOLOv6-S reached a new state-of-the-art 43.3% AP at 869 FPS.</li>
+<li>YOLOv6-M and YOLOv6-L also achieved better accuracy performance respectively at 49.5% and 52.3% with the same inference speed.</li>
+</ul>
+<p>All these characteristics make YOLOv5, the right algorithm for industrial applications.</p>
+<h2 id="YOLOv7-—-Trainable-bag-of-freebies-sets-new-state-of-the-art-for-real-time-object-detectors"><a href="#YOLOv7-—-Trainable-bag-of-freebies-sets-new-state-of-the-art-for-real-time-object-detectors" class="headerlink" title="YOLOv7 — Trainable bag-of-freebies sets new state-of-the-art for real-time object detectors"></a>YOLOv7 — Trainable bag-of-freebies sets new state-of-the-art for real-time object detectors</h2><p>YOLOv7 was released in July 2022 in the paper<a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2207.02696.pdf"> Trained bag-of-freebies sets new state-of-the-art for real-time object detectors</a>. This version is making a significant move in the field of object detection, and it surpassed all the previous models in terms of accuracy and speed.</p>
+<p><img src="https://images.datacamp.com/image/upload/v1665138395/YOLOV_7_VS_Competitors_4ad9ccaa6f.png" alt="YOLOV7 VS Competitors"></p>
+<p><em>Comparison of YOLOv7 inference time with other real-time object detectors</em> (<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2207.02696">source</a>)</p>
+<p>YOLOv7 has made a major change in its (1) architecture and (2) at the Trainable bag-of-freebies level:</p>
+<h3 id="1-Architectural-level"><a href="#1-Architectural-level" class="headerlink" title="1- Architectural level"></a>1- Architectural level</h3><p>YOLOv7 reformed its architecture by integrating the Extended Efficient Layer Aggregation Network (E-ELAN) which allows the model to learn more diverse features for better learning.</p>
+<p>In addition, YOLOv7 scales its architecture by concatenating the architecture of the models it is derived from such as YOLOv4, Scaled YOLOv4, and YOLO-R. This allows the model to meet the needs of different inference speeds.</p>
+<p><img src="https://images.datacamp.com/image/upload/v1665138394/YOLO_Compound_Scaling_Depth_5fbbd1106f.png" alt="YOLO Compound Scaling Depth"></p>
+<p><em>Compound scaling up depth and width for concatenation-based model</em> (<a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2207.02696.pdf">source</a>)</p>
+<h3 id="2-Trainable-bag-of-freebies"><a href="#2-Trainable-bag-of-freebies" class="headerlink" title="2- Trainable bag-of-freebies"></a>2- Trainable bag-of-freebies</h3><p>The term <strong>bag-of-freebies</strong> refers to improving the model’s accuracy without increasing the training cost, and this is the reason why YOLOv7 increased not only the inference speed but also the detection accuracy.</p>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>This article has covered the benefit of YOLO compared to other state-of-the-art object detection algorithms, and its evolution from 2015 to 2020 with a highlight of its benefits.</p>
+<p>Given the rapid advancement of YOLO, there is no doubt that it will remain the leader in the field of object detection for a very long time.</p>
+<p>The next step of this article will be the application of the YOLO algorithm to real-world cases. Until then, our<a target="_blank" rel="noopener" href="https://www.datacamp.com/courses/introduction-to-deep-learning-in-python"> Introduction to Deep Learning in Python</a> course can help you learn the fundamentals of neural networks and how to build deep learning models using Keras 2.0 in Python.</p>
+
+    </div>
+
+    <div class="research-item">
+      <h3>Research Title</h3>
+      <p>Brief abstract of the research.</p>
+      <div class="comments-section">
+        <h4>Comments</h4>
+        <textarea placeholder="Leave a comment..."></textarea>
+        <button>Submit</button>
+        <div class="comments-list">
+          <div class="comment">
+            <p>Sample comment from a user.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="webinar-section">
+      <h2>Upcoming Webinars</h2>
+      <div class="webinar-item">
+        <h3>Webinar Title</h3>
+        <p>Details about the webinar.</p>
+        <button onclick="joinWebinar()">Meet Link</button>
+        <button onclick="joinWebinar()">Zoom Link</button>
+      </div>
+    </div>
+    <div class="collaborative-projects">
+      <h2>Collaborative Projects</h2>
+      <div class="project-item">
+        <h3>Project Title</h3>
+        <p>Details about the project and how users can contribute.</p>
+        <button onclick="joinProject()">Join FB</button>
+        <button onclick="joinProject()">Join Slack</button>
+        <button onclick="joinProject()">Join Discord</button>
+        <button onclick="joinProject()">Join GitHub</button>
+        <button onclick="joinProject()">Join Project</button>
+      </div>
+    </div>
+    <div class="recommendations-section">
+      <h2>Recommended for You</h2>
+      <div class="recommendation-item">
+        <h3>Research Title</h3>
+        <p>Brief abstract of the research.</p>
+      </div>
+      <!-- More recommendation items -->
+    </div>
+    <div class="user-poll">
+      <h4>Your Opinion Matters</h4>
+      <form>
+        <label for="pollQuestion">What do you think about this research?</label>
+        <select id="pollQuestion">
+          <option value="excellent">Excellent</option>
+          <option value="good">Good</option>
+          <option value="average">Average</option>
+          <option value="poor">Poor</option>
+        </select>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+    <div id="liveChat">
+      <h4>Live Chat Room for All</h4>
+      <button onclick="openChat()">Chat Now</button>
+    </div>
+  </div>
+  <script>
+    function joinWebinar() {
+      // Code to join the webinar
+    }
+
+    function joinProject() {
+      // Code to join the project
+    }
+    function openChat() {
+      // Code to open live chat window
+    }
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+</body>
+
+</html>
